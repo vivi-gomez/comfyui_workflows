@@ -1,0 +1,998 @@
+{
+  "id": "ceb79bdb-0557-45c9-be50-00db0d6a0703",
+  "revision": 0,
+  "last_node_id": 23,
+  "last_link_id": 44,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "DownloadDistillAnyDepthModel",
+      "pos": [
+        -53.31389160156259,
+        332.2478820800779
+      ],
+      "size": [
+        439.8489929199219,
+        60.88600158691406
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "pipeline",
+          "type": "DISTILLPIPE",
+          "links": [
+            2,
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "distill-any-depth",
+        "ver": "ba68f938ed63e811ba63fadebb0a15532d1573bc",
+        "Node name for S&R": "DownloadDistillAnyDepthModel"
+      },
+      "widgets_values": [
+        "Distill-Any-Depth-Large"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "DistillAnyDepthProcessImage",
+      "pos": [
+        779.6000000000004,
+        -73.80000000000007
+      ],
+      "size": [
+        299.8648376464844,
+        126
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "DISTILLPIPE",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 36
+        },
+        {
+          "name": "processing_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "processing_resolution"
+          },
+          "link": 17
+        }
+      ],
+      "outputs": [
+        {
+          "name": "depth_image",
+          "type": "IMAGE",
+          "links": [
+            3,
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "distill-any-depth",
+        "ver": "ba68f938ed63e811ba63fadebb0a15532d1573bc",
+        "Node name for S&R": "DistillAnyDepthProcessImage"
+      },
+      "widgets_values": [
+        756,
+        "colorized"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "PreviewImage",
+      "pos": [
+        1543.331054687501,
+        -70.19999999999999
+      ],
+      "size": [
+        778.5000061035157,
+        560.5999999999999
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "PreviewImage",
+      "pos": [
+        1555.988452148436,
+        563.9689941406256
+      ],
+      "size": [
+        790,
+        562.2999877929688
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6,
+      "type": "DistillAnyDepthProcessImage",
+      "pos": [
+        868.9069335937502,
+        541.7090270996093
+      ],
+      "size": [
+        299.8648376464844,
+        126
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "DISTILLPIPE",
+          "link": 6
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 42
+        },
+        {
+          "name": "processing_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "processing_resolution"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "depth_image",
+          "type": "IMAGE",
+          "links": [
+            4,
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "distill-any-depth",
+        "ver": "ba68f938ed63e811ba63fadebb0a15532d1573bc",
+        "Node name for S&R": "DistillAnyDepthProcessImage"
+      },
+      "widgets_values": [
+        756,
+        "grayscale"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 8,
+      "type": "Reroute",
+      "pos": [
+        -45.4471818181814,
+        446.0100909090895
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            38
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 9,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -369.0471818181808,
+        522.41009090909
+      ],
+      "size": [
+        256.6499938964844,
+        457.084351747283
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": 44
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            37
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": []
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "baile2 dueto separados00000425.mov",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "AnimateDiff",
+        "videopreview": {
+          "hidden": false,
+          "paused": true,
+          "params": {
+            "filename": "baile2 dueto separados00000425.mov",
+            "type": "input",
+            "format": "video/mov",
+            "force_rate": 0,
+            "custom_width": 0,
+            "custom_height": 0,
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1300.1611540582837,
+        676.4100909090914
+      ],
+      "size": [
+        221.5833282470703,
+        365.39062213897705
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 40
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/16bit-png",
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "baile2 dueto separados00001350_00035.001.png",
+            "subfolder": "distill_any_depth/baile2 dueto separados00001350",
+            "type": "output",
+            "format": "image/png",
+            "frame_rate": 25,
+            "workflow": "baile2 dueto separados00001350_00035.png",
+            "fullpath": "/mnt/KVM2/onetrainer_linux/comfyAriane02/output/distill_any_depth/baile2 dueto separados00001350/baile2 dueto separados00001350_00035.%03d.png"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 11,
+      "type": "VHS_VideoInfo",
+      "pos": [
+        -16.172184106999264,
+        586.0100909090913
+      ],
+      "size": [
+        233.45000457763672,
+        206
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "source_fps🟨",
+          "type": "FLOAT",
+          "links": [
+            39,
+            40
+          ]
+        },
+        {
+          "name": "source_frame_count🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_duration🟨",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_width🟨",
+          "type": "INT",
+          "links": [
+            17,
+            18,
+            24
+          ]
+        },
+        {
+          "name": "source_height🟨",
+          "type": "INT",
+          "links": [
+            23
+          ]
+        },
+        {
+          "name": "loaded_fps🟦",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "loaded_frame_count🟦",
+          "type": "INT",
+          "links": [
+            41
+          ]
+        },
+        {
+          "name": "loaded_duration🟦",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "loaded_width🟦",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "loaded_height🟦",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_VideoInfo"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 12,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1297.3528181818165,
+        110.41009090909094
+      ],
+      "size": [
+        221.5833282470703,
+        365.39062213897705
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": 43
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 39
+        },
+        {
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 8,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "video/16bit-png",
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "baile2 dueto separados00001350_00002.001.png",
+            "subfolder": "distill_any_depth/baile2 dueto separados00001350",
+            "type": "output",
+            "format": "image/png",
+            "frame_rate": 25,
+            "workflow": "baile2 dueto separados00001350_00002.png",
+            "fullpath": "/mnt/KVM2/onetrainer_linux/comfyAriane02/output/distill_any_depth/baile2 dueto separados00001350/baile2 dueto separados00001350_00002.%03d.png"
+          }
+        }
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "Text Multiline",
+      "pos": [
+        940.552818181819,
+        410.0100909090915
+      ],
+      "size": [
+        232,
+        88
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21,
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "pr-was-node-suite-comfyui-47064894",
+        "ver": "1.0.1",
+        "Node name for S&R": "Text Multiline"
+      },
+      "widgets_values": [
+        "distill_any_depth/baile2 dueto separados00001350/baile2 dueto separados00001350"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 16,
+      "type": "PreviewAny",
+      "pos": [
+        645.9528181818193,
+        978.8100909090912
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 17,
+      "type": "PreviewAny",
+      "pos": [
+        872.5528181818194,
+        975.0100909090918
+      ],
+      "size": [
+        210,
+        112
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.3",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 22,
+      "type": "Frames Slice",
+      "pos": [
+        272.75281818181935,
+        443.6100909090904
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "link": 38
+        },
+        {
+          "name": "stop",
+          "type": "INT",
+          "widget": {
+            "name": "stop"
+          },
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            36,
+            42
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "RES4LYF",
+        "ver": "0dc91c00c4c3fb38e7874fcd7a2a327765e8882c",
+        "Node name for S&R": "Frames Slice"
+      },
+      "widgets_values": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 23,
+      "type": "VHS_BatchManager",
+      "pos": [
+        -467.5555146428887,
+        145.2100909090905
+      ],
+      "size": [
+        257.81666564941406,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "meta_batch",
+          "type": "VHS_BatchManager",
+          "links": [
+            43,
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "1.7.9",
+        "Node name for S&R": "VHS_BatchManager"
+      },
+      "widgets_values": {
+        "frames_per_batch": 1,
+        "count": 1
+      }
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      2,
+      0,
+      "DISTILLPIPE"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      6,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      1,
+      0,
+      6,
+      0,
+      "DISTILLPIPE"
+    ],
+    [
+      14,
+      6,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      9,
+      3,
+      11,
+      0,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      17,
+      11,
+      3,
+      2,
+      2,
+      "INT"
+    ],
+    [
+      18,
+      11,
+      3,
+      6,
+      2,
+      "INT"
+    ],
+    [
+      19,
+      2,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      15,
+      0,
+      12,
+      5,
+      "STRING"
+    ],
+    [
+      22,
+      15,
+      0,
+      10,
+      5,
+      "STRING"
+    ],
+    [
+      23,
+      11,
+      4,
+      16,
+      0,
+      "INT"
+    ],
+    [
+      24,
+      11,
+      3,
+      17,
+      0,
+      "INT"
+    ],
+    [
+      36,
+      22,
+      0,
+      2,
+      1,
+      "IMAGE"
+    ],
+    [
+      37,
+      9,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      8,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      39,
+      11,
+      0,
+      12,
+      4,
+      "FLOAT"
+    ],
+    [
+      40,
+      11,
+      0,
+      10,
+      4,
+      "FLOAT"
+    ],
+    [
+      41,
+      11,
+      6,
+      22,
+      1,
+      "INT"
+    ],
+    [
+      42,
+      22,
+      0,
+      6,
+      1,
+      "IMAGE"
+    ],
+    [
+      43,
+      23,
+      0,
+      12,
+      2,
+      "VHS_BatchManager"
+    ],
+    [
+      44,
+      23,
+      0,
+      9,
+      0,
+      "VHS_BatchManager"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.25,
+      "offset": [
+        641.0471818181813,
+        217.5899090909095
+      ]
+    },
+    "frontendVersion": "1.42.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
